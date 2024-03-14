@@ -1,0 +1,37 @@
+package com.gamearcade.middleservicepublisher;
+
+public class IMiddleServiceImpl implements IMiddleService {
+
+	@Override
+	public void chooseConsumer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectPlayerOpt() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectEventOrganizerOpt() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectAdminOpt() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectDevloperOpt() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

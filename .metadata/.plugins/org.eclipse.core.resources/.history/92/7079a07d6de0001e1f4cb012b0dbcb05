@@ -1,0 +1,18 @@
+package com.gamearcade.middleserviceconsumer;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+public class MiddleServiceConsumerActivator implements BundleActivator {
+
+	
+
+	public void start(BundleContext bundleContext) throws Exception {
+		
+	}
+
+	public void stop(BundleContext bundleContext) throws Exception {
+		
+	}
+
+}

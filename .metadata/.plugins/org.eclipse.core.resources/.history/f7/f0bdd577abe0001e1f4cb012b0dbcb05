@@ -1,0 +1,105 @@
+package com.gamearcade.instructionpublisher;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class IInstructionImpl implements IInstruction {
+	
+	Scanner scn = new Scanner(System.in);
+	 
+	ArrayList<InstructionModel> instrumentList = new ArrayList<InstructionModel>();
+
+	@Override
+	public void chooseAnOption(String string) {
+
+		System.out.println("Test Instruction" + string);
+		
+	}
+
+	@Override
+	public void addInstructions() {
+		char loopContinue ;
+		do {
+			InstructionModel insMod = new InstructionModel();
+			//selecting the instrument type
+			System.out.println("--------------------------------------------------------------------");
+			System.out.println("Select the instruction type to add a new Instruction(1-5)");
+			System.out.println("--------------------------------------------------------------------");
+			
+			//Displaying instrument types
+			System.out.println("1 - Player Instruction");
+			System.out.println("2 - Event Organizer Instruction");
+			System.out.println("3 - Developer Instruction");
+			System.out.println("4 - Other");
+			
+			int instruction = scn.nextInt();
+			switch(instruction) {
+		
+				//switch cases to check and assign the instrument type
+				case 1:
+					insMod.setType("Player Instruction");
+					break;
+				case 2:
+					insMod.setType("Event Organizer Instruction");
+					break;
+				case 3:
+					insMod.setType("Developer Instruction");
+					break;
+				case 4:
+					insMod.setType("Other");
+					break; 
+				default:
+					System.out.println("Error: Invalid type Selection.");
+			}
+		if(instruction<=4 ||instruction >=1) {
+			
+			//Getting the instrument details
+			System.out.println("Enter music instruction : ");
+			String iname = scn.nextLine();
+			insMod.setInstruction(scn.next());
+		
+			System.out.println("Enter Price : ");
+			Double priority = scn.nextDouble();
+			insMod.setPriority(priority);
+		}
+		
+		try {
+			instrumentList.add(insMod);
+			System.out.println("------All the Music instructions are successfully added to the system!---------");
+		}
+		catch(Exception e){
+			e.printStackTrace();		
+		}
+		System.out.println("\n Do you have another Instruction to add (Y/N) ?");
+		String response = scn.next();
+		
+		//condition to stop the loop
+		if(response.charAt(0)=='n'||response.charAt(0)=='N')
+			break;
+		loopContinue = response.charAt(0);
+		}while(loopContinue=='Y'||loopContinue=='y');
+		System.out.println("Thank you! \n\n");
+		
+	}
+
+	@Override
+	public void displayInstructions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateInstruction() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteInstruction() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

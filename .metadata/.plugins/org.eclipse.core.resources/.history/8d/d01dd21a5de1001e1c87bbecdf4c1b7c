@@ -1,0 +1,26 @@
+package com.gamearcade.instructionpublisher;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+public class InstructionPublisherActivator implements BundleActivator {
+
+	ServiceReference serviceReference;
+	
+	@Override
+	public void start(BundleContext context) throws Exception {
+		
+		System.out.println("Middle Publisher started...\n");
+		
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		
+		System.out.println("Middle Publisher stopped...\n");
+		context.ungetService(serviceReference);
+		
+	}
+
+}

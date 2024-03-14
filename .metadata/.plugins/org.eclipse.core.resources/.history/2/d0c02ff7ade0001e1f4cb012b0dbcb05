@@ -1,0 +1,224 @@
+package com.gamearcade.instructionpublisher;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class IInstructionImpl implements IInstruction {
+	
+	Scanner scn = new Scanner(System.in);
+	 
+	ArrayList<InstructionModel> instructionList = new ArrayList<InstructionModel>();
+
+	@Override
+	public void chooseAnOption(String string) {
+
+		System.out.println("Test Instruction" + string);
+		
+	}
+
+	@Override
+	public void addInstructions() {
+		char loopContinue ;
+		do {
+			InstructionModel insMod = new InstructionModel();
+			//selecting the instrument type
+			System.out.println("--------------------------------------------------------------------");
+			System.out.println("Select the instruction type to add a new Instruction(1-5)");
+			System.out.println("--------------------------------------------------------------------");
+			
+			//Displaying instrument types
+			System.out.println("1 - Player Instruction");
+			System.out.println("2 - Event Organizer Instruction");
+			System.out.println("3 - Developer Instruction");
+			System.out.println("4 - Other");
+			
+			int instruction = scn.nextInt();
+			switch(instruction) {
+		
+				//switch cases to check and assign the instrument type
+				case 1:
+					insMod.setType("Player Instruction");
+					break;
+				case 2:
+					insMod.setType("Event Organizer Instruction");
+					break;
+				case 3:
+					insMod.setType("Developer Instruction");
+					break;
+				case 4:
+					insMod.setType("Other");
+					break; 
+				default:
+					System.out.println("Error: Invalid type Selection.");
+			}
+		if(instruction<=4 ||instruction >=1) {
+			
+			//Getting the instrument details
+			System.out.println("Enter music instruction : ");
+			String iname = scn.nextLine();
+			insMod.setInstruction(scn.next());
+		
+			System.out.println("Enter Price : ");
+			Double priority = scn.nextDouble();
+			insMod.setPriority(priority);
+		}
+		
+		try {
+			instructionList.add(insMod);
+			System.out.println("------All the Music instructions are successfully added to the system!---------");
+		}
+		catch(Exception e){
+			e.printStackTrace();		
+		}
+		System.out.println("\n Do you have another Instruction to add (Y/N) ?");
+		String response = scn.next();
+		
+		//condition to stop the loop
+		if(response.charAt(0)=='n'||response.charAt(0)=='N')
+			break;
+		loopContinue = response.charAt(0);
+		}while(loopContinue=='Y'||loopContinue=='y');
+		System.out.println("Thank you! \n\n");
+		
+	}
+
+	@Override
+	public void displayInstructions() {
+		System.out.println("---------------------------------------------------------");
+		System.out.println("****Retrieving all the musical instrument details****");
+		System.out.println("---------------------------------------------------------");
+		for(InstructionModel insMod:instructionList) {
+			this.displayInstructionDetails(insMod);
+		}
+		
+	}
+	
+	public void displayInstructionDetails(InstructionModel inst) {
+		System.out.println("");
+		System.out.println("Model Number : "+inst.getType());
+		System.out.println("Instrument Type : "+inst.getInstruction());
+		System.out.println("Price : "+inst.getPriority());
+		System.out.println("-------------------------------");
+		
+	}
+
+	@Override
+	public void updateInstruction() {
+		
+		char loopContinue ;
+		
+		System.out.println("\n\n----------------------------------------------------------------------------------------------------------------");	
+		System.out.println("******Given Below are all the Instructions which was added to the Game Arcade which can be updated******");
+		System.out.println("----------------------------------------------------------------------------------------------------------------");
+		
+		for(InstructionModel insMod:instructionList) {
+			this.displayInstructionDetails(insMod);
+		}
+		do {
+		System.out.println("Enter the model number of the instrument you want to update");
+		String updateModel=scn.next();
+		
+		System.out.println("Enter the section number you want to update(1-5)");
+		System.out.println("1 - Instruction ID");
+		System.out.println("2 - Instruction Type");
+		System.out.println("3 - Instruction");
+		System.out.println("4 - Priority");
+	
+		int updateSection = scn.nextInt();
+		
+		int itemId =0;
+		
+		for(InstructionModel insMod:instructionList) {
+			itemId++;
+			//comparing model number
+			if(insMod.getType().equals(updateModel)) {			
+				switch(updateSection) {
+		
+				case 1:
+					System.out.println("Enter new instruction ID");
+					insMod.setID(scn.next());
+					break;				
+				case 2:
+					System.out.println("Enter new instruction type");
+					insMod.setType(scn.next());
+					break;
+				case 3:
+					System.out.println("Enter new Instruction");
+					insMod.setInstruction(scn.next());
+					break;
+				case 4:
+					System.out.println("Enter Priority");
+					insMod.setPriority(scn.nextDouble());
+					break; 
+				default:
+					System.out.println("Error: Invalid Menu Selection.");
+				}
+			}
+		}
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("----  Given below are all the instructions after udpdate   -----");
+		System.out.println("---------------------------------------------------------------------------");
+		for(InstructionModel insMod:instructionList) {
+		this.displayInstructionDetails(insMod);
+		}
+		System.out.println("\n Do you have another Instruction to update (Y/N) ?");
+		String response = scn.next();
+		
+		if(response.charAt(0)=='n'||response.charAt(0)=='N')
+			break;
+		loopContinue = response.charAt(0);
+		}while(loopContinue=='Y'||loopContinue=='y');
+		System.out.println("Thank you!");
+		
+	}
+
+	@Override
+	public void deleteInstruction() {
+		
+		char loopContinue ;
+		
+		System.out.println("\n\n----------------------------------------------------------------------------------");
+		System.out.println("******Given below are all the musical instruments which you can delete******");
+		System.out.println("----------------------------------------------------------------------------------");
+		
+		for(InstructionModel insMod:instructionList) {
+			this.displayInstructionDetails(insMod);
+		}
+		
+		do {
+		System.out.println("Enter the model number of the instructiont you want to remove");
+		String remvModel=scn.next();
+		int itemId =0;
+		
+		for(InstrumentModel inst:instrumentList) {
+			itemId++;
+			
+			//condition to compare model number
+			if(inst.getType().equals(remvModel)) {
+				System.out.println(itemId);
+				instrumentList.remove(itemId-1);
+				System.out.println("Music instrument with model number: "+inst.getType()+" removed successfully");
+				break;
+			}
+		 }
+		System.out.println("\n\n----------------------------------------------------------------");
+		System.out.println("       Other instruments in the music store after deletion      ");
+		System.out.println("-----------------------------------------------------------------");
+		for(InstrumentModel inst:instrumentList) {
+			this.displayInstrumentDetails(inst);
+		}
+		 
+		System.out.println("\n Do you have another musical instrument to delete (Y/N) ?");
+		String response = scn.next();
+		
+		if(response.charAt(0)=='n'||response.charAt(0)=='N')
+			break;
+		loopContinue = response.charAt(0);
+		}while(loopContinue=='Y'||loopContinue=='y');
+		System.out.println("Thank you!");
+		
+	}
+	
+	
+
+}

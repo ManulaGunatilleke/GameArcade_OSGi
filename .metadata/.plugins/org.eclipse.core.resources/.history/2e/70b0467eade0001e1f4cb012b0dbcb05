@@ -1,0 +1,51 @@
+package com.gamearcade.instructionpublisher;
+
+public class InstructionModel {
+	
+	private String instruction,type,ID;
+	private double priority;
+	
+	public InstructionModel() {
+		
+	}
+	
+	public InstructionModel(String instruction, String type, double priority) {
+		
+		this.instruction = instruction;
+		this.type = type;
+		this.priority = priority;
+	}
+	
+	public double getID() {
+		return ID;
+	}
+
+	public void setID(double iD) {
+		ID = iD;
+	}
+
+	public String getInstruction() {
+		return instruction;
+	}
+
+	public void setInstruction(String instruction) {
+		this.instruction = instruction;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public double getPriority() {
+		return priority;
+	}
+
+	public void setPriority(double priority) {
+		this.priority = priority;
+	}
+	
+}

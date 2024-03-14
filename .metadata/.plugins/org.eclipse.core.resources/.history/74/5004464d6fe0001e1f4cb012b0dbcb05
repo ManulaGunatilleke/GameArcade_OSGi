@@ -1,0 +1,25 @@
+package com.gamearcade.middleserviceconsumer;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+public class MiddleServiceConsumerActivator implements BundleActivator {
+
+	ServiceReference serviceReference;
+	
+	@Override
+	public void start(BundleContext context) throws Exception {
+		
+		System.out.println("Middle consumer started...\n");
+	
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		
+		System.out.println("Middle consumer stopped...\n");
+		context.ungetService(serviceReference);
+	}
+
+}

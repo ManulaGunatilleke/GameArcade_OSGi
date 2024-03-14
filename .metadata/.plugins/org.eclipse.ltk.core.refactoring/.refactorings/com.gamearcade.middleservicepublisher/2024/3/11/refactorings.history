@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.gamearcade.middleservicepublisher.Activator&apos; to &apos;MiddleServicePublsherActivator&apos;&#x0D;&#x0A;- Original project: &apos;com.gamearcade.middleservicepublisher&apos;&#x0D;&#x0A;- Original element: &apos;com.gamearcade.middleservicepublisher.Activator&apos;&#x0D;&#x0A;- Renamed element: &apos;com.gamearcade.middleservicepublisher.MiddleServicePublsherActivator&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Activator&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.gamearcade.middleservicepublisher{Activator.java[Activator" matchStrategy="1" name="MiddleServicePublsherActivator" qualified="false" references="true" similarDeclarations="false" stamp="1710246025759" textual="false" version="1.0"/>
+</session>

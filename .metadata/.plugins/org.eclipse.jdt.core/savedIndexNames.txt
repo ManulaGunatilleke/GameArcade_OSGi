@@ -1,0 +1,16 @@
+INDEX VERSION 1.131+C:\Users\games\Documents\All sliit\Year 3 - SE\2nd Semester\Software Architecture - SE3030 [2024FEB]\Labs\Week5\GameManagementSystem-OSGi\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+4091116092.index
+1742076780.index
+1772862468.index
+2315009316.index
+1022763632.index
+3198033018.index
+3244502490.index
+2968029143.index
+1631356830.index
+945924666.index
+1529126599.index
+776255966.index
+1372677264.index
+4051938545.index

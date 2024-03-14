@@ -1,0 +1,11 @@
+package com.gamearcade.instructionpublisher;
+
+public interface IInstruction {
+
+	public void addMusicalInstruments();
+	public void displayInstrumentList();
+	public void updateMusicItem();
+	public void deleteMusicItem();
+	public void chooseAnOption(String consumer);
+
+}

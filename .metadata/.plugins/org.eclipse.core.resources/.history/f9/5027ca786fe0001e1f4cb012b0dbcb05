@@ -1,0 +1,5 @@
+package com.gamearcade.middleservicepublisher;
+
+public class IMiddleServiceImpl implements IMiddleService {
+
+}

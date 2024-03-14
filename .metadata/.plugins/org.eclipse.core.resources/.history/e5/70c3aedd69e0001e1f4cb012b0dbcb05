@@ -1,0 +1,22 @@
+package com.gamearcade.instructionpublisher;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+public class Activator implements BundleActivator {
+
+	private static BundleContext context;
+
+	static BundleContext getContext() {
+		return context;
+	}
+
+	public void start(BundleContext bundleContext) throws Exception {
+		InstructionPublisherActivator.context = bundleContext;
+	}
+
+	public void stop(BundleContext bundleContext) throws Exception {
+		InstructionPublisherActivator.context = null;
+	}
+
+}

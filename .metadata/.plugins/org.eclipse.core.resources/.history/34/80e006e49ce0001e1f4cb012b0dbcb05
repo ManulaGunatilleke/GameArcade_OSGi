@@ -1,0 +1,5 @@
+package com.gamearcade.instructionpublisher;
+
+public class IInstructionImpl implements IInstruction {
+
+}

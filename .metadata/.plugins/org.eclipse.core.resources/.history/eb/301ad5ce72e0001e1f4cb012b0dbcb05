@@ -1,0 +1,96 @@
+package com.gamearcade.middleservicepublisher;
+
+public class IMiddleServiceImpl implements IMiddleService {
+
+	//IEventPublisher eventPublisher;
+	//IMusicCoursePublisher coursePublisher;
+	//IMusicResourcePublisher resourcePublisher;
+	//IQuizPublisher quizPublisher;
+	private static IMiddleServiceImpl instance;
+	
+	//constructor
+	private IMiddleServiceImpl() {
+		//eventPublisher = new EventPublisherImpl();
+		//coursePublisher = new MusicCoursePublisherImpl();
+		//resourcePublisher = new MusicResourcePublisherImpl();
+		//quizPublisher = new QuizPublisherImpl();
+	}
+	
+	public static IMiddleServiceImpl getMidService() {
+		
+		if(instance == null) {
+			instance = new IMiddleServiceImpl();
+		}
+		
+		return instance;
+	}
+	
+	@Override
+	public void chooseConsumer() {
+		int choice;
+        boolean ex = true;
+        Scanner scanner = new Scanner(System.in);
+        do {
+        	System.out.println("-----------------------------------------------------------------");
+            System.out.println("             ~ Welcome to Stellato Music Academy ~ ");
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println("Enter your choice to continue:");
+            System.out.println("1. Admin");
+            System.out.println("2. Event Organizer");
+            System.out.println("3. Player");
+            System.out.println("4. Developer");
+            System.out.println("5. Exit");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 1:
+                    this.selectAdminOpt();
+                    break;
+                case 2:
+                    this.selectEventOrganizerOpt();
+                    break;
+                case 3: 
+                	this.selectPlayerOpt();
+                	break;
+                case 4: 
+                	this.selectDevloperOpt();
+                	break;
+                case 5: 
+                	System.out.println("Exiting...Thank you!\n");
+                	ex = false;
+                	break;
+                default:
+                    System.out.println("Invalid choice");
+            }
+
+        } while (ex);
+		
+	}
+
+	@Override
+	public void selectPlayerOpt() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectEventOrganizerOpt() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectAdminOpt() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectDevloperOpt() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

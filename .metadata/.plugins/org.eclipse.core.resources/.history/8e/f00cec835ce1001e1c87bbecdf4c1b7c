@@ -1,0 +1,40 @@
+package com.gamearcade.developerconsumer;
+
+import java.util.Scanner;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+import com.gamearcade.developerpublisher.IDeveloperPublisher;
+
+
+public class DeveloperConsumerActivator implements BundleActivator {
+
+	@SuppressWarnings("rawtypes")
+	ServiceReference gamePublisherServiceReference;
+
+	public void start(BundleContext context) throws Exception {
+		System.out.println("Developer consumer started...\n");
+		gamePublisherServiceReference = context.getServiceReference(IDeveloperPublisher.class.getName());
+		@SuppressWarnings("unchecked")
+		IDeveloperPublisher gamePublish = (IDeveloperPublisher)context.getService(gamePublisherServiceReference);
+		
+        @SuppressWarnings("resource")
+		Scanner add = new Scanner(System.in);
+        System.out.println("Are you a player, an admin, or an developer consumer? (player/admin/developerConsumer): ");
+        String consumerType = add.next().trim().toLowerCase();
+        if (consumerType.equals("player") || consumerType.equals("admin") || consumerType.equals("developerconsumer")) {
+        	gamePublish.selectGameOption(consumerType);
+        } else {
+            System.out.println("Invalid consumer type.");
+        }
+		
+	}
+
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Developer consumer stopped...\n");
+		context.ungetService(gamePublisherServiceReference);
+	}
+
+}

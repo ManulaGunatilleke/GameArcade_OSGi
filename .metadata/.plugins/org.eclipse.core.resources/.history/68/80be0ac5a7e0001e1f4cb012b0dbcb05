@@ -1,0 +1,7 @@
+package com.gamearcade.instructionpublisher;
+
+public interface IInstruction {
+
+	void chooseAnOption(String string);
+
+}

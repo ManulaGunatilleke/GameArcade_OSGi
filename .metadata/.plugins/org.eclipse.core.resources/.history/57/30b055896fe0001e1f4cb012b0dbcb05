@@ -1,0 +1,7 @@
+package com.gamearcade.middleservicepublisher;
+
+public interface IMiddleService {
+	
+	public void checkConsumer();
+
+}

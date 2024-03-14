@@ -1,0 +1,14 @@
+package com.gamearcade.instructionpublisher;
+
+public class IInstructionImpl implements IInstruction {
+
+	@Override
+	public void chooseAnOption(String string) {
+
+		System.out.println("Test Instruction");
+		
+	}
+	
+	
+
+}

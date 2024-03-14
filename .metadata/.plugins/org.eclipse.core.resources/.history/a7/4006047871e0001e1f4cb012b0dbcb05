@@ -1,0 +1,13 @@
+package com.gamearcade.middleservicepublisher;
+
+public class IMiddleServiceImpl implements IMiddleService {
+
+	@Override
+	public void chooseConsumer() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,38 @@
+package com.gamearcade.instructionpublisher;
+
+public class IInstructionImpl implements IInstruction {
+
+	@Override
+	public void chooseAnOption(String string) {
+
+		System.out.println("Test Instruction" + string);
+		
+	}
+
+	@Override
+	public void addInstructions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void displayInstructions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateInstruction() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteInstruction() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}
